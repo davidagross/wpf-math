@@ -221,7 +221,7 @@ namespace WpfMath
         private GlyphTypeface CreateFont(string name)
         {
             // Load font from embedded resource.
-            var fontUri = new Uri(string.Format("pack://application:,,,/WpfMath;component/{0}{1}", fontsDirectory, name));
+            var fontUri = new Uri(string.Format("pack://application:,,,/{0};component/{1}{2}", Assembly.GetExecutingAssembly().GetName().Name, fontsDirectory, name));
             return new GlyphTypeface(fontUri);
         }
 
